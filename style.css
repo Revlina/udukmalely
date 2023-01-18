@@ -1,0 +1,644 @@
+* , html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+header{
+    background: #1a2238;
+    color: #eaeaea;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo{
+    margin-right: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.logolina-img{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;    
+}
+
+.logo-title{      
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .5s ease 0s;
+}
+
+.logo:hover{
+    color: #ff6a30;
+    transform: rotate(2deg);
+}
+
+.pencarian{
+    color: white;
+}
+
+.btn-cta{
+    margin-right: 15px;
+    border: none;
+    font-size: 15px;
+    padding: 4px 10px;
+    background: #ff6a30;
+    color: #eaeaea;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav ul{
+    display: flex;
+    padding: 6px;
+}
+
+li{
+    list-style-type: none;
+    padding: 5px;
+}
+
+li a{
+    transition: all .5s ease 0s;
+    display: inline-block;
+}
+
+li a:hover{
+    color: #ff6a30;
+    transform: rotate(2deg);
+}
+
+a{
+    color: #eaeaea;
+    text-decoration: none;  
+    padding: 10px;
+}
+
+/* hamburger menu */
+
+
+.btn{
+    float: right;
+    font-size: 25px;
+    color: white;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media(max-widht:560px){
+    nav .logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;       
+    }
+}
+
+@media(max-width:540px){
+    .btn{
+        display: block;
+    }
+    ul{      
+        height: 30vh;
+        width: 30%;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.8);
+        transition: all .5s;
+    }
+    #check:checked ~ ul{
+        left: 0;
+        display: block;
+    }
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.img-foto1{
+    width: 80%;
+    max-width: 420px;
+    height: 70%;
+    padding: 10px;
+    border : 10px 10px 10px cadetblue;
+    box-shadow: 12px 12px 12px cadetblue;
+}
+
+.img-foto{
+    width: 80%;
+    max-width: 420px;
+    height: 70%;
+    padding: 10px;
+    border : 10px 10px 10px cadetblue;
+    box-shadow: 12px 12px 12px cadetblue;
+}
+
+.tokoh{
+    color: blue;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.efek-ngetik{
+    color: #ff0057;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.parallax1{
+    background-image: url(./bolen2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    height: 220vh;
+} 
+
+.tentang1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #273b72;
+    color: #eaeaea;
+    padding: 12px;    
+    box-shadow: 10px 10px 10px 10px #05164a;
+}
+
+.mt-10{
+    margin-top: 7px;
+}
+
+/* isi */
+.box{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: space-around;    
+    flex-wrap: wrap;
+    margin: 20px;  
+    margin-left: 30px;         
+}
+.box .card{
+    position: relative;
+    height: 210px;
+    background: #eaeaea;
+    opacity: calc(90%);
+    display: flex;
+    width: 37%;
+    margin: 30px 0;
+    gap: 20px;
+    border-radius: 40px 40px;    
+    box-shadow: 15px 15px 15px rgb(149, 7, 7);
+}
+
+.box .card .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(181, 69, 69);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+    border-radius: 40px 40px;
+}
+.box .card:hover .imgBx{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+    transition: .5s ease-in-out;
+    background: #ff0057;
+    box-shadow: 10px 10px 10px #5b0421;
+}
+.box .card .imgBx:before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    color: rgba(225, 225, 225, 05);
+    font-weight: 600;
+}
+.box .card .imgBx img{
+    max-width: 130px;
+    transition: 0.5s ease-in-out;
+}
+.box .card:hover .imgBx img{
+    max-width: 75px;
+}
+
+.botok {
+    border-radius: 50%;
+    border: 5px 5px 5px 5px #e91e63;
+    box-shadow:3px 3px 3px 5px #660324;
+}
+
+.pepestahu {
+    border-radius: 0 50% 0 50%;
+    border: 5px 0 5px 0 #f10b57;
+    box-shadow: 3px 3px 5px 5px #9bdc28;
+}
+
+.tongkolbalado {
+    border-radius: 50% 0 50% 0;
+    border: 0 5px 0 5px #f10b57;
+    box-shadow: 5px 5px 3px 3px #3a5a02;
+}
+
+.perkedel {
+    border-radius: 0 50% 50% 50%;
+    border: 0 5px 0 5px #f10b57;
+    box-shadow: 5px 5px 3px 3px #4e0470;
+}
+
+.box .card .isi{
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .card .isi h3{
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+.box .card .isi a{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    /* background: rgb(189, 12, 12); */
+    text-decoration: none;
+    color: black;
+}
+
+h6{
+    font-size: 11px;
+    color: #ff0057;
+    display: inline;
+    padding: 1px;
+}
+
+@media(max-width: 992px){
+    .box{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box .card{
+        width: 400px;
+    }
+}
+@media(max-width: 768px){    
+    .box .card{
+        width: 300px;
+    }
+    .box .card .imgBx{
+        position: relative;
+    }    
+}
+@media(max-width:540px){
+    .box .card {
+        width: 80%;
+    }
+}
+
+.pencari{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    margin-left: 30px;
+}
+.pencari:target{
+    opacity: 1;
+    pointer-events: auto;    
+}
+
+.modal-close{ 
+    line-height: 80px;
+    font-size: 12px;   
+    width: 70px;
+    text-decoration: none;   
+}
+.modal-close:hover{
+    color: aquamarine;
+    size: 15px;
+}
+.pencari input[type-text]{   
+    box-sizing: border-box;
+}
+
+.parallax {
+    background-image: url(./bolen1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;     
+    height: 300vh;
+}
+
+.tentang2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #1a5578;
+    color: #eaeaea;
+    padding: 12px;    
+    box-shadow: 10px 10px 10px 10px  #012235;
+}
+
+.nasi{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.nasi .kartu {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(225, 225, 225, 0.40);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur (15px);
+}
+
+.nasi .kartu .kartunasi {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.nasi .kartu:hover .kartunasi {
+    transform: translateY(-100px);
+}
+
+.nasi .kartu .kartunasi img {
+    max-width: 100%;
+    margin: 0 0 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.nasi .kartu:hover .kartunasi img {
+    transform: translate(-10px, -20px) rotate(-20deg) scale(1.2);
+}
+
+.nasi .kartu .kartunasi h2 {
+    color: red;
+    font-weight: bold;
+}
+
+.nasi .kartu .isi-menu {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nasi .kartu:hover .isi-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50px);
+}
+
+.nasi .kartu .isi-menu .harga,
+.nasi .kartu .isi-menu .lauk-pauk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+.nasi .kartu .isi-menu .harga h3,
+.nasi .kartu .isi-menu .lauk-pauk h2 {
+    color: red;
+    font-weight: 300;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.nasi .kartu .isi-menu .harga span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 24px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 500;
+    transform: 0.5s;
+    cursor: pointer;
+}
+
+.nasi .kartu .isi-menu .harga span:hover{
+    background: #9bdc28;
+    transform: scale(1.5);
+}
+
+.nasi .kartu .isi-menu .lauk-pauk span {
+    width: 20px;
+    height: 20px;
+    background: #f00;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.nasi .kartu .isi-menu .lauk-pauk span:hover {
+    width: 20px;
+    height: 20px;
+    background: #f00;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform: scale(2.5);
+}
+
+.nasi .kartu .isi-menu .lauk-pauk span:nth-child(2) {
+    background-image: url(./bihun1.jfif);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;     
+}
+
+.nasi .kartu .isi-menu .lauk-pauk span:nth-child(3) {
+    background-image: url(./telor1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;     
+
+}
+
+.nasi .kartu .isi-menu .lauk-pauk span:nth-child(4) {
+    background-image: url(./jengkol1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;     
+}
+
+
+.nasi .kartu .isi-menu .lauk-pauk span:nth-child(5) {
+    background: #e9a536;
+}
+
+.nasi .kartu .isi-menu a {
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fff;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #111;
+    text-decoration: none;  
+}
+
+section {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 200;
+    background-color: #1a2238;
+}
+
+.footer {
+    padding: 18px 0;
+    background: #273b72;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #fff;
+}
+
+.footer .social a {
+    font-size: 15px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 5px;
+    display: inline-block;   
+    text-align: center;    
+    border-radius: 50%;
+    margin: 0 3px;
+    margin-bottom: 5px;
+    margin-top: -20;
+    opacity: 0.50;
+}
+
+.footer .social a:hover {
+    opacity: 0.9;
+}
+
+.footer ul {
+    margin-top: -30px;    
+    list-style: none;
+    font-size: 12px;
+    line-height: 5;
+    margin-bottom: 30;
+    text-align: center;
+    color: white;
+}
+
+
+
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 2px;
+}
+
+.footer ul li a:hover {
+    opacity: 1;
+}
+
+.footer .copyright {
+    margin-top: -20px; 
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+}
